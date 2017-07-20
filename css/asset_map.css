@@ -1,0 +1,106 @@
+/* // Written by Tom Chen */
+body {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+#map {
+  height: 100vh;
+  width: 100vw;
+  background-color: #F8F6F0;
+}
+
+.update_error {
+  color: #ff0000;
+  text-align: left;
+}
+
+@media (max-width:768px) {
+  .modal-dialog {
+    margin-left: 50px;
+  }
+}
+
+.editing_form > label {
+  font-weight: 100;
+  font: 12px;
+  position: relative;
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+
+.asset_btn {
+  margin-right: 20px;
+}
+.ui-front {
+  z-index: 2000;
+}
+.value {
+  color: #c14417;
+}
+.title {
+  font-weight: bold;
+}
+.select2-dropdown {
+  z-index: 20000;
+}
+
+.editable {
+  display: block;
+}
+#add_asset_btn {
+  margin-top: 5px;
+}
+.tooltip {
+  z-index: 20000;
+}
+#user_manage > div > div {
+  margin-top: 5px;
+}
+.asset_category {
+  margin-bottom: 20px;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+  border-radius: 10px;
+}
+.new_category_btn, .edit_category_btn {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.edt_btn {
+  margin-bottom: 5px;
+}
+.save_edits {
+  width: auto;
+  display: inline-block;
+}
+.save_update_error {
+  margin-left: 5px;
+  width: auto;
+  display: inline;
+}
+.query_btn, .clear_btn, .save_user_btn {
+  margin-top: 5px;
+  width: 138px;
+  text-align: left;
+}
+.query_date_form {
+  display: inline;
+}
+.query_date {
+  width: 100%;
+}
+.result {
+  width: 95%;
+  float: right;
+}
+#updateProfileBtn {
+  margin-bottom: 5px;
+}
+.ui-widget-header {
+  background: #337ab7;
+  color: #fff;
+}
+.category_header, .selected_room_number {
+  font-size: 18px;
+  font-weight: 700;
+}

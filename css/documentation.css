@@ -1,0 +1,75 @@
+/* // Written by Tom Chen */
+body {
+  font-family: 'Ubuntu', sans-serif;
+  color: #333;
+}
+.row {
+  margin-left: 1.0em;
+  margin-right: 1.1em;
+}
+.content {
+  max-width: 30px;
+  height: 30px;
+  border-right: 1px solid #333;
+}
+.section_title {
+  font-size: 22px;
+  font-weight: 700;
+  border-bottom: 2px solid #333;
+
+}
+.section_body {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7em;
+}
+
+.contact_title {
+  width: 150px;
+  font-weight: bold;
+  color: #e62e00;
+  display: inline-block;
+}
+.contact_value {
+  margin: 0px 10px 10px;
+}
+.navbar-brand {
+  padding-top: 3px;
+  padding-left: 3px;
+}
+.main_title {
+  font-size: 16px;
+  font-weight: 700;
+}
+@media (max-width:768px) {
+  .navbar-brand {
+    padding-top: 1px;
+    padding-left: 0px;
+  }
+  .content {
+    max-width: 100%;
+  }
+  .navbar-left {
+    margin-left: -15px;
+  }
+}
+.navbar-default {
+  background-color: #fff;
+  border: none;
+}
+.carousel-caption {
+  color: #000;
+  background-color: rgba(255,255,255,0.2);
+}
+.carousel-caption h3 {
+  font-size: 20px;
+}
+.carousel-caption p {
+  font-size: 16px;
+}
+.carousel-indicators .active {
+  background-color: rgba(3,3,3,0.5);
+}
+.carousel-indicators li {
+  border: 1px solid rgba(0,0,0,0.2);
+}

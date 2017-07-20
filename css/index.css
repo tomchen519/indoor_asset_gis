@@ -1,0 +1,55 @@
+/* // Written by Tom Chen */
+body {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+#login_box {
+  /*position: relative;*/
+  top: 30%;
+  margin: 0px auto;
+  max-width: 40%;
+}
+
+.navbar-brand {
+  padding-top: 3px;
+  padding-left: 3px;
+}
+.main_title {
+  font-size: 16px;
+  font-weight: 700;
+}
+@media (max-width:768px) {
+  .navbar-brand {
+    padding-top: 1px;
+    padding-left: 0px;
+  }
+  #login_box {
+    max-width: 60%;
+  }
+  .navbar-left {
+    margin-left: -15px;
+  }
+}
+.error {
+  color: #ff0000;
+  padding-left: 15px;
+}
+.modal-title {
+  font-weight: bold;
+  color: #111;
+}
+.modal-header {
+  background-color: #d9d9d9	;
+  border-bottom: 1px solid #999999;
+}
+.modal-footer {
+  border-top: 1px solid #999999;
+}
+.title {
+  width: 150px;
+  font-weight: bold;
+  color: #e62e00;
+  display: inline-block;
+}
+.modal-body {
+}
