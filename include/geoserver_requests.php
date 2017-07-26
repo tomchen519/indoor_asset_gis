@@ -2,7 +2,6 @@
 // Written by Tom Chen
 // Initiate cURL session
 $host = "https://cartographicmedia.ddns.net/geoserver/";
-//$host = "localhost/geoserver/";
 $service = "wfs?service=WFS&version=2.0.0";
 $request = "request=GetFeature";
 $outputformat = "outputformat=json";
@@ -25,7 +24,7 @@ if ($_POST["request"]=="fetch_data_layers") {
 $ch = curl_init();
 
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); //option to return string
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_VERBOSE, true);
 
 $header = array();

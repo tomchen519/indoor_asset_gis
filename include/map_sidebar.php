@@ -15,7 +15,6 @@ function populateDpMenuContent($array, $menuID) {
   }
 }
 
-
 $assetFields = getDistinctAssetValues();?>
 <!-- sidebar container -->
 <div id="sidebar" class="sidebar sidebar-left collapsed">
@@ -56,7 +55,6 @@ $assetFields = getDistinctAssetValues();?>
         <form id="query_feature_form" autocomplete="off">
         <!-- admin authenticated components -->
           <div class="form-group editing_form">
-
             <!-- UNIQUE ID -->
             <label for="query_uid">Unique ID</label>
             <span class="<?php if ($userRole == 'admin') { echo 'editable';} ?>"><input type="text" id="query_uid" class="query form-control" name="uid" placeholder="Unique ID"></span>
@@ -89,7 +87,6 @@ $assetFields = getDistinctAssetValues();?>
             <!-- ROOM NUMBER -->
             <label for="query_bldg_room">Room Number</label>
             <span class="<?php if ($userRole == 'admin') { echo 'editable';} ?>"><input type="text" id="query_bldg_room" class="query form-control" name="bldg_room" placeholder="Building/Room; e.g. SH0107"></span>
-
             <!-- DATE ACQUIRED -->
             <label for="query_acquired_date">Date Acquired</label>
             <span class="query_date_form <?php if ($userRole == 'admin') { echo 'editable';} ?>">
@@ -102,7 +99,6 @@ $assetFields = getDistinctAssetValues();?>
               <input type="text" class="query query_date form-control datepicker" id="query_service_date_min" name="service_date_min" placeholder="From">
               <input type="text" class="query query_date form-control datepicker" id="query_service_date_max" name="service_date_max" placeholder="To">
             </div>
-
             <!-- LAST SERVICED BY -->
             <label for="query_serviced_by">Serviced by</label>
             <span class="editable"><input type="text" id="query_serviced_by" class="query form-control" name="serviced_by" placeholder="Maintenance performed by ..."></span>
@@ -119,10 +115,7 @@ $assetFields = getDistinctAssetValues();?>
 
 <!-- MAKE CLEAR QUERY BUTTON -->
           <div class="query_submit"><button type='button' class='query_btn btn btn-primary' data-toggle='tooltip' title='Query for assets'><span class="fa fa-search"></span>&nbsp;&nbsp;&nbsp;Submit Query</button></div>
-          <!-- <div class="save_update_error update_error"></div> -->
-
           <div class="clear_query"><button type='button' class='clear_btn btn btn-primary' data-toggle='tooltip' title='Clear Query'><span class="fa fa-times"></span>&nbsp;&nbsp;&nbsp;Clear Query</button></div>
-
         </div>
         </form>
       </div>
@@ -246,9 +239,7 @@ $assetFields = getDistinctAssetValues();?>
 
           <div class='add_" . $category_title . " edit_" . $category_title ."'></div>";
       }
-
       echo "</div>
-
       </div>
       </div>";
       echo "<!-- USER MANAGEMENT -->";

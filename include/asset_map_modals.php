@@ -1,3 +1,4 @@
+<!-- // Written by Tom Chen -->
 <!-- Update Profile Modal -->
 <div class="modal fade" id="updateProfileModal" tabindex="-1" role="dialog" aria-labelledby="updateProfileModal">
   <div class="modal-dialog" role="document">
@@ -35,4 +36,3 @@
     </div>
   </div>
 </div>
-

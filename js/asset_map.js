@@ -47,7 +47,6 @@ function setTimeOut() {
   var minutes = 30;
   var idleTimeWarning = 1000 * 60 * minutes;
   var sessionTimeOut = 1000 * 60 * (minutes-20);
-
   idleTimer = null;
   sessionTimer = null;
   idleTimer = setTimeout(function() {
@@ -74,7 +73,6 @@ $(document).ready(function() {
   });
 
 // ****Function declartions
-
   // ****Retrive all layers from GeoServer
   function fetchFeatureLayers () {
     map.spin(true, {lines:9, length:40, width:24,radius:60});
@@ -144,6 +142,7 @@ $(document).ready(function() {
     });
   }
 
+// ****Function to pass clicked room to fetch assets
   function selectRoom (room=null) {
     cleanMap();
     $(".asset_categories").html("");
@@ -169,7 +168,7 @@ $(document).ready(function() {
     }
   }
 
-// FUNCTION TO PASS CLICKED AND QUERIED ROOM TO FETCH ASSETS
+// ****Function to pass clicked and queried room to fetch assets
   function selectQueriedRoom (room, querySTR) {
     $(".asset_categories").html("");
     var room_prop = room.properties;
@@ -182,6 +181,7 @@ $(document).ready(function() {
     fetchAssetFeatures(room_in_focus, querySTR);
   }
 
+// ****Function to send criteria to database to query room
   function queryRooms (queryArray) {
     cleanMap();
     $(".asset_categories").html("");
@@ -247,6 +247,7 @@ $(document).ready(function() {
     });
   }
 
+// ****Function to display rooms matching query
   function fetchSelectedRoomFeatures (room, floor, querySTR) {
     map.spin(true, {lines:9, length:40, width:24,radius:60});
     queried_room_featureGroup = L.geoJson(null, {style: floorSelectedStyle,
@@ -461,7 +462,7 @@ $(document).ready(function() {
     $("#checkbox").prop("checked", false);
   }
 
-  // ****UPDATE ASSET DATA
+  // ****Update asset data
   function updateAssetData(properties_array) {
     disableUpdateFeature();
     map.spin(true, {lines:9, length:40, width:24,radius:60});
@@ -481,6 +482,7 @@ $(document).ready(function() {
     });
   }
 
+  // ****Update preset values
   function editCategoryValue(category, actionStr, newValue, oldValue=null) {
     $('label[for="add_'+category+'"]').css({color:"black"});
     var category_menu = category + "_menu";
@@ -543,8 +545,6 @@ $(document).ready(function() {
     }
   });
 
-////////////////////////////////////////////////////////////////////////////////
-
 // ****Capitalize the first letter of a string
   String.prototype.upperFirstChar = function() {
     return this.charAt(0).toUpperCase() + this.slice(1);
@@ -581,7 +581,7 @@ $(document).ready(function() {
   sidebar = L.control.sidebar('sidebar', {position: 'left'});
   map.addControl(sidebar);
 
-// ****LISTENER FUNCTION TO DETECT FLOOR NUMBER AND REFRESH MARKERS FOR THAT FLOOR
+// ****Listener function to detect floor number and refresh markers for that floor
   map.on('baselayerchange', function(e) {
     cleanMap();
     currentFloorView = e.name.slice(-2);
@@ -648,7 +648,6 @@ $(document).ready(function() {
   });
 
   // ****Validate if new password and confirm passwords exist and match
-  /////// NEED TO ADD UPDATE USER FUNCTION ON PHP ///////////////////
   $('#update_profile').click(function(){
     var newPassword = $('#new_password').val();
     var confirmPassword = $('#confirm_password').val();
@@ -766,6 +765,7 @@ $(document).ready(function() {
     }
   }
 
+  // ****Listener event for routine maintenance without any other change in values
   $('#checkbox').change(function() {
     new_edits = {};
     if (this.checked) {
@@ -780,12 +780,10 @@ $(document).ready(function() {
     } else {
       enableUpdateFeature();
     }
-
   });
 
   function validateInput(inputArray) {
     inputString = null;
-    // console.log("InputString: "+inputString);
     for (var key in inputArray) {
       inputString = inputArray[key];
       inputString = inputString.trim();
@@ -796,14 +794,12 @@ $(document).ready(function() {
         } else {
           inputString = inputString + "Z";
         }
-
       } else if (key == "notes") {
         if (inputString == null || inputString == "") {
           delete inputArray[key];
         } else {
           inputString = encodeURI(inputString);
         }
-
       } else {
         if (/[^\w\s]/gi.test(inputString)) {
           inputString = "error";
@@ -811,14 +807,13 @@ $(document).ready(function() {
       }
       inputArray[key] = inputString;
     }
-    console.log(inputArray);
     return inputArray;
   }
 
   // ****Select2 dropdown UI interactions
   $(".select2-single").select2({placeholder:"", width: "100%"});
 
-  // ****SAVE BUTTON FUNCTIONS
+  // ****Save button functions
   $('.save_edits_btn').click(function() {
     var array_to_validate = {};
     var input_fields = [];
@@ -850,10 +845,12 @@ $(document).ready(function() {
     }
   });
 
+  // ****Maintain consistent behavior of checkbox
   $("#profile, #query, #assets_list, #data_manage, #user_manage").on('click', function() {
     $("#checkbox").prop({"checked": false});
   });
 
+  // ****Behavior of Query Button
   $(".query_btn").click(function() {
     var query_array = {};
     $(".query").each(function() {
@@ -869,6 +866,7 @@ $(document).ready(function() {
     }
   });
 
+  // ****Behavior of Clear Button
   $(".clear_btn").click(function() {
     document.getElementById("query_feature_form").reset();
     $(".select2-single").val("none").trigger("change");
@@ -878,6 +876,7 @@ $(document).ready(function() {
     cleanMap();
   });
 
+  // ****Behavior of Add Category Button
   $(".new_category_btn").click(function(e) {
     var category = e.currentTarget.id.replace("add_","");
     var category_action = "add";
@@ -895,6 +894,7 @@ $(document).ready(function() {
     });
   });
 
+  // ****Behavior of Dropdown Menu
   $(".edit_data.select2-single").on('select2:select', function (e) {
     var edit_value = e.target.value;
     var edit_type = e.target.id.replace("_menu", "");
@@ -902,6 +902,7 @@ $(document).ready(function() {
     $("#"+edit_type_btn).prop("disabled", false);
   });
 
+  // ****Behavior of Edit Category Button
   $(".edit_category_btn").click(function(e) {
     var category = e.currentTarget.id.replace("edit_", "");
     var category_action = "edit";
@@ -917,6 +918,7 @@ $(document).ready(function() {
     });
   });
 
+  // ****Behavior of List User Button
   $(".list_user_btn").click(function() {
     $(".user_list").html("");
     $.ajax({
@@ -955,6 +957,7 @@ $(document).ready(function() {
     });
   });
 
+  // ****Behavior of Add User Button
   $(".new_user_btn").click(function() {
     console.log("adding new user");
     $(".user_list").html("");

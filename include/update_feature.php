@@ -4,24 +4,19 @@
 if (isset($_POST)) {
 
   // Initiate cURL session
-  //////////////////////   DO NOT MODIFY THIS SECTION //////////////////////////////
   $service = "https://cartographicmedia.ddns.net/geoserver/";
-  $request = "wfs"; // to add a new workspace
+  $request = "wfs";
   $url = $service . $request;
   $ch = curl_init($url);
-  //////////////////////////////////////////////////////////////////////////////////
 
-  // Optional settings for debugging
-  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); //option to return string
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
   curl_setopt($ch, CURLOPT_VERBOSE, true);
 
   //Required POST request settings
   curl_setopt($ch, CURLOPT_POST, true);
-//  $passwordStr = "admin01:indoor123";
-//  curl_setopt($ch, CURLOPT_USERPWD, $passwordStr);
 
   //POST data
-  curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-type: application/xml", "23cb8xMEUHYV: admin"));
+  curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-type: application/xml", "XXXXXX: YYYYYY")); // replace XXXXXX with proxy header attribute and YYYYYY with user with privilege to perform OGC services
 
   // UPDATE FUNCTION
   if ($_POST["action"]=="update") {
